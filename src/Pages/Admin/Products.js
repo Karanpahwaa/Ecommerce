@@ -12,7 +12,7 @@ const Products = () => {
   const getAllProducts = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/product/get-product`
+        `https://ecommerce-backend-txxg.onrender.com/api/v1/product/get-product`
       );
       setProducts(data.products);
       console.log(data);
@@ -40,7 +40,7 @@ const Products = () => {
             {products?.map((p) => (
               <Link to={`/dashboard/admin/product/${p.slug}`} key={p._id} className="product-link mb-2 mt-2">
                 <div className="card product-card-div" style={{ width: "21rem" }}>
-                  <img src={`http://localhost:5000/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
+                  <img src={`https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-photo/${p._id}`} className="card-img-top" alt={p.name} />
                   <div className="card-body" style={{zIndex : "3",minHeight: "50px",maxHeight: "200px"}}>
                     <h5 className="card-title">{p.name}</h5>
                     <p className="card-text">{p.description}</p>

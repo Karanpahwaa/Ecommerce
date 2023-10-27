@@ -23,7 +23,7 @@ const ProductDetails = () => {
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/product/get-product/${params.slug}`
+        `https://ecommerce-backend-txxg.onrender.com/api/v1/product/get-product/${params.slug}`
       );
       setProduct(data?.product);
       getSimilarProduct(data?.product._id, data?.product.category._id);
@@ -36,7 +36,7 @@ const ProductDetails = () => {
   const getSimilarProduct = async (pid, cid) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/product/related-product/${pid}/${cid}`
+        `https://ecommerce-backend-txxg.onrender.com/api/v1/product/related-product/${pid}/${cid}`
       );
       setRelatedProducts(data?.products);
     } catch (error) {
@@ -49,7 +49,7 @@ const ProductDetails = () => {
       <div className="row container mt-3 ms-3">
         <div className="col-md-6">
           <img
-            src={`http://localhost:5000/api/v1/product/product-photo/${product._id}`}
+            src={`https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-photo/${product._id}`}
             className="card-img mb-4"
             style={{
               borderRight: "2px solid white",
@@ -114,7 +114,7 @@ const ProductDetails = () => {
                   {p.description.substring(0, 25)} ...
                 </p>
                 <img
-                  src={`http://localhost:5000/api/v1/product/product-photo/${p._id}`}
+                  src={`https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                   style={{ width: "280px", height: "220px" }}

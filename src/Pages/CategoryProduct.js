@@ -19,7 +19,7 @@ const CategoryProduct = () => {
   const getPrductsByCat = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/product/product-category/${params.slug}`
+        `https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-category/${params.slug}`
       );
       setProducts(data?.products);
       setCategory(data?.category);
@@ -49,7 +49,7 @@ const CategoryProduct = () => {
                       {p.description.substring(0, 25)}..
                     </p>
                     <img
-                      src={`http://localhost:5000/api/v1/product/product-photo/${p._id}`}
+                      src={`https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-photo/${p._id}`}
                       className="card-img"
                       alt={p.name}
                     />

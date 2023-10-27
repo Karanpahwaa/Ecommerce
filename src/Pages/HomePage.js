@@ -28,7 +28,7 @@ const HomePage = () => {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/category/get-category"
+        "https://ecommerce-backend-txxg.onrender.com/api/v1/category/get-category"
       );
       if (data?.success) {
         setCategories(data?.category);
@@ -48,7 +48,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/product/product-list/${page}`
+        `https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-list/${page}`
       );
       setLoading(false);
       setProducts(data.products);
@@ -62,7 +62,7 @@ const HomePage = () => {
   const getTotal = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/product-count"
+        "https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-count"
       );
       setTotal(data?.total);
     } catch (error) {
@@ -80,7 +80,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/product/product-list/${page}`
+        `https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-list/${page}`
       );
       setLoading(false);
       setProducts([...products, ...data?.products]);
@@ -113,7 +113,7 @@ const HomePage = () => {
   const filterProduct = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/product/product-filters",
+        "https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-filters",
         {
           checked,
           radio,
@@ -180,7 +180,7 @@ const HomePage = () => {
             {/* <div className="product-div"> */}
             {products?.map((p) => (
               <div
-                to={`http://localhost:5000/dashboard/admin/product/${p.slug}`}
+                to={`https://ecommerce-backend-txxg.onrender.com/dashboard/admin/product/${p.slug}`}
                 key={p._id}
                 className="product-link mb-2 mt-2"
               >
@@ -197,7 +197,7 @@ const HomePage = () => {
                     {p.description.substring(0, 25)}..
                   </p>
                   <img
-                    src={`http://localhost:5000/api/v1/product/product-photo/${p._id}`}
+                    src={`https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                     style={{ width: "280px", height: "220px" }}

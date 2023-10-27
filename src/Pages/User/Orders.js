@@ -13,7 +13,7 @@ const Orders = () => {
 
   const getOrders = async ()=>{
     try {
-      const {data} = await axios.get('http://localhost:5000/api/v1/auth/orders')
+      const {data} = await axios.get('https://ecommerce-backend-txxg.onrender.com/api/v1/auth/orders')
       setOrders(data)
     } catch (error) {
       console.log(error)

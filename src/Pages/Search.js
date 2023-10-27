@@ -23,7 +23,7 @@ const Search = () => {
               {/* <div className="product-div"> */}
               {values?.results.map((p) => (
                 <div
-                  to={`http://localhost:5000/dashboard/admin/product/${p.slug}`}
+                  to={`https://ecommerce-backend-txxg.onrender.com/dashboard/admin/product/${p.slug}`}
                   key={p._id}
                   className="product-link mb-2 mt-2"
                 >
@@ -40,7 +40,7 @@ const Search = () => {
                       {p.description.substring(0, 25)}..
                     </p>
                     <img
-                      src={`http://localhost:5000/api/v1/product/product-photo/${p._id}`}
+                      src={`https://ecommerce-backend-txxg.onrender.com/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                       style={{ width: "280px", height: "220px" }}
